@@ -28,6 +28,9 @@ public class KitapDOMSample {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             document = builder.parse(new File(xmlFileName));
+            System.out.println(factory.getClass().getName());
+            System.out.println(builder.getClass().getName());
+            System.out.println(document.getClass().getName());
             Node katalog = document.getDocumentElement();
             if (katalog.getNodeType() == Node.ELEMENT_NODE) {
                 NodeList kitaplar = katalog.getChildNodes();

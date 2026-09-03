@@ -1,5 +1,7 @@
 package com.example.exercises;
 
+import java.util.Objects;
+
 public class User {
 
     private final String username;
@@ -7,6 +9,7 @@ public class User {
     private final int age;
     private final String phone;
     private final String address;
+    private final String country;
 
     private User(Builder builder) {
         this.username = builder.username;
@@ -14,6 +17,7 @@ public class User {
         this.age = builder.age;
         this.phone = builder.phone;
         this.address = builder.address;
+        this.country = builder.country;
     }
 
     public static class Builder {
@@ -26,7 +30,8 @@ public class User {
         private int age;
         private String phone;
         private String address;
-
+        private String country;
+        
         public Builder(String username) {
             this.username = username;
         }
@@ -50,8 +55,13 @@ public class User {
             this.address = address;
             return this;
         }
+        public Builder country(String country) {
+        	this.country = country;
+        	return this;
+        }
 
         public User build() {
+        	Objects.requireNonNull(country,"country cannot be empty or null");
         	// object-pooling -> flyweight pattern
             if (username == null || username.isBlank()) {
                 throw new IllegalStateException(

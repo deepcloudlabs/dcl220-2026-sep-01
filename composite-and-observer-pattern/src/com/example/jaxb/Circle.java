@@ -56,6 +56,8 @@ public class Circle {
 		try {
 			JAXBContext jc = JAXBContext.newInstance(Circle.class);
 			Marshaller m = jc.createMarshaller();
+			System.out.println(jc.getClass().getName());
+			System.out.println(m.getClass().getName());
 			Circle circle = new Circle(1, 2, 10);
 			Style style = new Style("red",5);
 			circle.setStyle(style);
