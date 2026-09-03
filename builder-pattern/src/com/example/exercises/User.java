@@ -2,6 +2,7 @@ package com.example.exercises;
 
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 public class User {
 
     private final String username;
@@ -9,7 +10,7 @@ public class User {
     private final int age;
     private final String phone;
     private final String address;
-    private final String country;
+	private final String country;
 
     private User(Builder builder) {
         this.username = builder.username;

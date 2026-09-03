@@ -1,6 +1,5 @@
 package com.example.lottery.service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;

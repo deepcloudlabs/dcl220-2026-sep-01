@@ -110,7 +110,7 @@ final class InstrumentRegistry { // object pool
      *                 hot path allocates nothing once the universe is warm.
      */
     Instrument intern(String venueMic, String symbol, java.util.function.Supplier<Instrument> supplier) {
-        return pool.computeIfAbsent(key(venueMic, symbol), ignored -> supplier.get());
+        return pool.computeIfAbsent(key(venueMic, symbol), _ -> supplier.get());
     }
 
     Instrument find(String venueMic, String symbol) {

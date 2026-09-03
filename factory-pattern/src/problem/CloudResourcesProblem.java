@@ -97,7 +97,7 @@ final class ArchiveService {
     /** Nobody wrote this on purpose; three independent chains simply drifted apart. */
     void archiveMixed(String documentId, String content) {
         String uri = new S3BlobStore().put(documentId, content);
-        String key = new AzureKeyVault().signingKey();
+        String _ = new AzureKeyVault().signingKey();
         try {
             new ServiceBusQueue().publish(uri);
         } catch (IllegalArgumentException e) {

@@ -1,16 +1,17 @@
 package com.example;
 
-import com.example.util.OldFileVisitor;
-import com.example.util.PrintTree;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.ZonedDateTime;
 
+import com.example.util.PrintTree;
+
 public class WalkFileTreeApp {
 
-    public static void main(String[] args) {
+    @SuppressWarnings("unused")
+	public static void main(String[] args) {
 //        if (args.length < 1) {
 //            System.out.println("Usage: WalkFileTreeTest <starting directory>");
 //            System.exit(-1);

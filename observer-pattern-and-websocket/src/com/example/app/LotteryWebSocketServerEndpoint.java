@@ -19,7 +19,7 @@ public class LotteryWebSocketServerEndpoint {
 
 	@OnWebSocketConnect
 	public void onMessage(Session session) {
-		IntStream.range(0, 1000).forEach(i -> {
+		IntStream.range(0, 1000).forEach( _ -> {
 			try {
 				session.getRemote().sendString(random.ints(1, 50).distinct().limit(6).sorted().boxed()
 						.map(Object::toString).collect(Collectors.joining(",", "[", "]")));

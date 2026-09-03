@@ -168,6 +168,7 @@ final class OnPremiseCloudPlatform implements CloudPlatform {
 }
 
 //---------------------------------------------------------------- the service
+@SuppressWarnings("unused")
 final class ArchiveService {
 	private final BlobStore blobStore;
 	private final MessageQueue messageQueue;
