@@ -18,6 +18,26 @@ public class Exercise04 {
 				new TradeEvent("orcl", 101,100),
 				new TradeEvent("orcl", 102,200),
 				new TradeEvent("orcl", 103,100),
+				new TradeEvent("orcl", 104,200),
+				new TradeEvent("orcl", 100,200),
+				new TradeEvent("orcl", 101,100),
+				new TradeEvent("orcl", 102,200),
+				new TradeEvent("orcl", 103,100),
+				new TradeEvent("orcl", 104,200),
+				new TradeEvent("orcl", 100,200),
+				new TradeEvent("orcl", 101,100),
+				new TradeEvent("orcl", 102,200),
+				new TradeEvent("orcl", 103,100),
+				new TradeEvent("orcl", 104,200),
+				new TradeEvent("orcl", 100,200),
+				new TradeEvent("orcl", 101,100),
+				new TradeEvent("orcl", 102,200),
+				new TradeEvent("orcl", 103,100),
+				new TradeEvent("orcl", 104,200),
+				new TradeEvent("orcl", 100,200),
+				new TradeEvent("orcl", 101,100),
+				new TradeEvent("orcl", 102,200),
+				new TradeEvent("orcl", 103,100),
 				new TradeEvent("orcl", 104,200)
 			);
 		var publisher = new SubmissionPublisher<TradeEvent>();
@@ -44,8 +64,8 @@ class SlowSubcriber implements Flow.Subscriber<RichTradeEvent> {
 
 	@Override
 	public void onNext(RichTradeEvent event) {
-		try {TimeUnit.SECONDS.sleep(5);}catch(Exception e) {}
-		System.err.println("SlowSubcriber: Handling event [%s]".formatted(event));
+		//try {TimeUnit.SECONDS.sleep(5);}catch(Exception e) {}
+		System.err.println("[%s]SlowSubcriber: Handling event [%s]".formatted(Thread.currentThread().getName(),event));
 		this.subscription.request(1); // pull-based
 	}
 
@@ -71,7 +91,7 @@ class FastSubcriber implements Flow.Subscriber<RichTradeEvent> {
 	
 	@Override
 	public void onNext(RichTradeEvent event) {
-		System.err.println("FastSubcriber: Handling event [%s]".formatted(event));
+		System.err.println("[%s]FastSubcriber: Handling event [%s]".formatted(Thread.currentThread().getName(),event));
 		this.subscription.request(1); // pull-based
 	}
 	
