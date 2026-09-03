@@ -8,7 +8,8 @@ import com.example.factory.*;
  */
 public class TestImageReaderFactory {
 	public static void main(String[] args) {
-		ImageReader reader = ImageReaderFactory.createImageReader("my.secret.gif");
+		ImageReader reader = ImageReaderFactory.createImageReader("my.secret.jpeg");
+		System.out.println(reader.getClass().getName());
 		reader.loadImage();
 	}
 }
